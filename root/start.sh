@@ -1,7 +1,11 @@
 #!/bin/bash
+set -e
 
 # Perform the initial configuration as root
 /init.sh
+
+# Template /etc/dnsmasq.conf with the correct proxyDHCP server IP
+/dnsmasq-template.sh
 
 echo "            _   _                 _                      "
 echo " _ __   ___| |_| |__   ___   ___ | |_  __  ___   _ ____  "
