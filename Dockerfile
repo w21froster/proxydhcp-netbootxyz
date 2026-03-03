@@ -94,7 +94,7 @@ EXPOSE 3000
 COPY --chown=root:root root/ /
 
 # Make scripts executable
-RUN chmod +x /start.sh /init.sh /healthcheck.sh /usr/local/bin/dnsmasq-wrapper.sh
+RUN chmod +x /dnsmasq-template.sh /start.sh /init.sh /healthcheck.sh /usr/local/bin/dnsmasq-wrapper.sh
 
 # Enhanced health check with better timing for slow systems
 HEALTHCHECK --interval=30s --timeout=15s --start-period=60s --retries=3 \
