@@ -1,7 +1,7 @@
 # /etc/dnsmasq.conf - ProxyDHCP only (template)
 
 # Enable proxyDHCP mode (no IP address assignment)
-dhcp-range=0.0.0.0,proxy
+dhcp-range=${PROXYDHCP_SUBNET},proxy
 
 # Log DHCP traffic
 log-dhcp

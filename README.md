@@ -11,8 +11,11 @@ PXE boot netboot.xyz without touching your existing DHCP server – the containe
 docker run -d \
   --name=proxydhcp-netbootxyz \
   --network host \
-  -v /path/to/tftp/menus:/config/menus \   # optional, for persistent menus
-  ghcr.io/netbootxyz/proxydhcp-netbootxyz
+  --cap-add=NET_ADMIN \
+  --cap-add=NET_RAW \
+  -e PROXYDHCP_SERVER_IP="192.168.0.103" \
+  -e PROXYDHCP_SUBNET="192.168.0.0" \
+  proxydhcp-netbootxyz:v0.1
 ```
 
 > **Why `--network host`?**  
